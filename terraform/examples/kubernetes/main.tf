@@ -7,7 +7,7 @@ resource "azurerm_resource_group" "aks" {
   location = var.LOCATION
 }
 resource "azurerm_virtual_network" "vnet" {
- name                = "spoke-${var.ENVIRONMENT}-${var.PROJECT_CODE}-${var.LOCATION_CODE}"
+ name                = "spoke-${var.ENVIRONMENT}-${var.PROJECT}-${var.PROJECT_CODE}-${var.LOCATION_CODE}"
  location            = azurerm_resource_group.aks.location
  resource_group_name = azurerm_resource_group.aks.name
  address_space       = ["${var.PROJ_VNET_ADDRESS_SPACE_1}","${var.PROJ_VNET_ADDRESS_SPACE_2}"]
