@@ -28,7 +28,7 @@ resource "azurerm_subnet" "subnet2" {
 }
 
 resource "azurerm_public_ip" "pip" {
-  name                = "${var.ENVIRONMENT}-aks-${var.PROJECT_CODE}-${var.LOCATION_CODE}-pip"
+  name                = "${var.ENVIRONMENT}-aks-${var.PROJECT}-${var.PROJECT_CODE}-${var.LOCATION_CODE}-pip"
   resource_group_name = azurerm_resource_group.aks.name
   location            = azurerm_resource_group.aks.location
   allocation_method   = "Static"
